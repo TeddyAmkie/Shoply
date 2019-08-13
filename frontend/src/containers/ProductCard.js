@@ -20,9 +20,9 @@ class Product extends Component {
     }
 
     render() {
-        let { name, price, description, image_url } = this.props.product
+        let { name, price, description, image_url, quantity } = this.props.product
         if (description.length > 40) {
-            description = description.substring(0,40) + "...";
+            description = description.substring(0, 40) + "...";
         }
         return (
             <Card className="text-center m-2 " style={{ maxWidth: "30%", maxHeight: "5%", verticalAlign: "text-top", display: "inline-block" }}>
@@ -31,8 +31,8 @@ class Product extends Component {
                 <p> Quantity in cart: {this.props.qty}</p>
                 <Card.Text> {description}</Card.Text>
                 <img src={image_url} alt={{ name }} style={{ maxWidth: "auto", maxHeight: "75px" }} ></img> <br></br>
-                <Button className="m-1" variant="outline-success" size="sm" onClick={this.handleAdd}>Add to cart</Button>
-                <Button className="m-1" variant="outline-danger" size="sm" onClick={this.handleRemove}>Remove from cart</Button>
+                <Button className="m-1" variant="outline-success" size="sm" hidden={quantity === 0} onClick={this.handleAdd}>Add to cart</Button>
+                <Button className="m-1" variant="outline-danger" size="sm" hidden={this.props.qty === 0} onClick={this.handleRemove}>Remove from cart</Button>
                 <br></br>
             </Card>
         )

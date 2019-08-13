@@ -12,3 +12,13 @@ export function calculateTotalWithTax(price) {
     price = price * 1.0875
     return Math.round(price * Math.pow(10, 2)) / Math.pow(10, 2).toFixed(2)
 }
+
+export function applyDiscount(price, discount, discountType) {
+    if (discountType === "percent") {
+        discount = discount * 1 / 100;
+        return (price * discount).toFixed(2);
+    }
+    if (discountType === "flat") {
+        return price - discount;
+    }
+}

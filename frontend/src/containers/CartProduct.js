@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { connect } from 'react-redux';
-import { removeFromCart, addToCart } from './actionCreators';
+import { removeFromCart, addToCart } from '../actionCreators';
 
 class CartProduct extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class CartProduct extends Component {
 
 
   render() {
-    let { name, price, description, image_url } = this.props.product
+    let { name, price, description, image_url, quantity } = this.props.product
 
     return (
       <div>
@@ -35,7 +35,7 @@ class CartProduct extends Component {
             </Card.Subtitle>
             <Card.Text> {description} </Card.Text>
           </Card.Body>
-          <Button className="m-1" variant="outline-success" size="sm" onClick={this.handleAdd}>Add to cart</Button>
+          <Button className="m-1" variant="outline-success" size="sm" hidden={quantity === 0} onClick={this.handleAdd}>Add to cart</Button>
           <Button className="m-1" variant="outline-danger" size="sm" onClick={this.handleRemove}>Remove from cart</Button>
         </Card>
       </div>

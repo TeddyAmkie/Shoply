@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Cart from './Cart'
+import Cart from './containers/Cart'
 import ProductList from './containers/ProductList'
 
 class Routes extends Component {
