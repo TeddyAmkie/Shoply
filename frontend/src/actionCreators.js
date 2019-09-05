@@ -1,7 +1,7 @@
 import { ADD_TO_CART, REMOVE_FROM_CART, GET_ALL_PRODUCTS, GET_DISCOUNT } from './actionTypes';
 import axios from 'axios';
 
-const BASE_URL = "http://localhost:3000"
+const BASE_URL = "http://localhost:3001"
 // Get all products thunk
 export function getProductsFromAPI() {
     return async function (dispatch) {
@@ -20,7 +20,7 @@ function gotProducts(products) {
 
 export function getDiscount(promocode) {
     return async function (dispatch) {
-        let res = await axios.post("http://localhost:3000/products/promo", {
+        let res = await axios.post("http://localhost:3001/products/promo", {
             promocode
         });
         dispatch(gotDiscount(res.data));

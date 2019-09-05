@@ -4,6 +4,7 @@ const ExpressError = require('./helpers/expressError');
 const morgan = require('morgan');
 const app = express();
 const cors = require('cors');
+const { authenticateJWT } = require('./middleware/auth');
 
 // var whitelist = ['http://localhost:3000', 'http://localhost:3001']
 
@@ -17,6 +18,7 @@ const cors = require('cors');
 //   }
 // }
 
+
 app.use(cors());
 
 app.use(express.json());
@@ -24,13 +26,17 @@ app.use(express.json());
 // add logging system
 app.use(morgan('tiny'));
 
+// get auth token from all routes
+app.use(authenticateJWT);
+
 
 // Routes
 
 const productRoutes = require("./routes/products");
-
+const authRoutes = require("./routes/auth");
 
 app.use('/products', productRoutes);
+app.use('/auth', authRoutes);
 // app.use('/cart', orderingRoutes)
 
 

@@ -16,6 +16,7 @@ return (
   <div className="Navigation navbar navbar-expand-md" style={{ borderBottom: "2px solid rgba(0,0,0,.125)", marginBottom: "50px" }}>
     <NavLink className="navbar-brand" style={{ display: "inline-block" }} to="/">Shoply</NavLink>
     <NavLink to="/products" style={{fontSize: "16px"}} activeStyle={activeStyles}> Products </NavLink>
+    <NavLink to="/login" style={{fontSize: "16px", margin: "5px"}} activeStyle={activeStyles}> Login </NavLink>
     <ul className="navbar-nav ml-auto">
       <li className="nav-item mr-4"><NavLink to="/cart" style={{fontSize: "16px"}} activeStyle={activeStyles}><i className=" fas fa-shopping-cart"></i> </NavLink></li>
        Items: {cartQuantity(this.props.cart)}

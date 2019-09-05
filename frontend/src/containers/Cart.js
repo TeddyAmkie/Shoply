@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import CartProduct from "../containers/CartProduct";
 import { calculateTotalWithTax, applyDiscount } from '../helperFunctions';
 import Discount from './Discount';
+import CheckoutForm from '../CheckoutForm';
 
 
 class Cart extends Component {
@@ -24,8 +25,9 @@ class Cart extends Component {
         this.props.discounts.promotion.amount, this.props.discounts.promotion.discount_type)
     }
     totalPrice = calculateTotalWithTax(totalPrice - discount)
+
     return (
-      <div>
+      <div className="container m-1">
         <Card bg="light" style={{ width: '24rem' }}>
           {items}
           <Card.Header>Subtotal:
@@ -33,7 +35,8 @@ class Cart extends Component {
             Total: ${totalPrice} <br></br>
             Discount: {discount}
           </Card.Header>
-          <Card.Header><Discount /> </Card.Header>
+          <Card.Header><Discount />  </Card.Header>
+          <CheckoutForm />
         </Card>
 
       </div >
