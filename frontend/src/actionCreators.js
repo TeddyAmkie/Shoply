@@ -1,7 +1,7 @@
 import { ADD_TO_CART, REMOVE_FROM_CART, GET_ALL_PRODUCTS, GET_DISCOUNT } from './actionTypes';
 import axios from 'axios';
 
-const BASE_URL = "http://localhost:3001"
+const BASE_URL = process.env.URL || "http://localhost:3001"
 // Get all products thunk
 export function getProductsFromAPI() {
     return async function (dispatch) {
