@@ -8,11 +8,15 @@ This is a fullstack CRUD site that I can try out anything that may not be able t
 Setup:
 
 cd frontend
+
 npm install
+
 npm start
 
 cd backend
+
 npm install
+
 nodemon server.js
 
 Tests:
