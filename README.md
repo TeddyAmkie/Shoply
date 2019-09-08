@@ -16,8 +16,11 @@ npm start
 cd backend
 
 npm install
-
+createdb shoply
+psql shoply < data.sql
 nodemon server.js
+
+
 
 Tests:
 Since I use this to sandbox, I will either TDD the new feature once I get it working in the project I'm actually working on
