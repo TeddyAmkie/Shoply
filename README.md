@@ -4,7 +4,6 @@ A personal project I use to sandbox when I need a fullstack app with authenticat
 
 
 ### Setup:
-
 ```cd frontend
 
 npm install
@@ -18,4 +17,3 @@ createdb shoply
 psql shoply < data.sql
 nodemon server.js
 ```
-
