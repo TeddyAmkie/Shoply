@@ -1,13 +1,11 @@
-# redux-cartly
 E-commerce site using React, Redux, Express, &amp; PostgreSQL
 
-This is a personal project that I use to sandbox and have fun with. 
-This is a fullstack CRUD site that I can try out anything that may not be able to sandbox in a new project.
+A personal project I use to sandbox when I need a fullstack app with authentication.
 
 
-Setup:
+### Setup:
 
-cd frontend
+```cd frontend
 
 npm install
 
@@ -19,9 +17,5 @@ npm install
 createdb shoply
 psql shoply < data.sql
 nodemon server.js
+```
 
-
-
-Tests:
-Since I use this to sandbox, I will either TDD the new feature once I get it working in the project I'm actually working on
-or properly test it there after implementing it. 
